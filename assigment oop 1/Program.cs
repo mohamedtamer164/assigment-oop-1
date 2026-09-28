@@ -40,16 +40,60 @@
             //// 2 مفيش Valedatoin  اي مقدرش اعمل كود يحددلي انا عاوز ادخل اي 
             ////بيانات تتقري عادي، لكن مينفعش تتغير إلا بشروط معينة.
 
-            DeliveryAddress address = new DeliveryAddress("Cairo",
-    "Tahrir Street",
-    15);
-            DeliveryAddress address2 = address;
-            address.GetFullAddress();
-            address2.City = "Giza";
-            address2.Street = "elharam";
-            address2.BuildingNumber = 15;
-            address.GetFullAddress();
-            address2.GetFullAddress();
+            //        DeliveryAddress address = new DeliveryAddress("Cairo",
+            //"Tahrir Street",
+            //15);
+            //        DeliveryAddress address2 = address;
+            //        address.GetFullAddress();
+            //        address2.City = "Giza";
+            //        address2.Street = "elharam";
+            //        address2.BuildingNumber = 15;
+            //        address.GetFullAddress();
+            //        address2.GetFullAddress();
+
+
+            // Create DeliveryAddress
+            DeliveryAddress address = new DeliveryAddress(
+                "Cairo",
+                "Tahrir Street",
+                15
+            );
+
+            // Create Shipment
+            Shipment shipment = new Shipment(
+                "SH-101",
+                "Laptop",
+                3,
+                100,
+                address
+            );
+
+            // Print shipment information
+            shipment.PrintShipment();
+
+            Console.WriteLine();
+
+            // Test UpdateDeliveryFee
+            shipment.UpdateDeliveryFee(120);
+
+            Console.WriteLine("After updating delivery fee:");
+            shipment.PrintShipment();
+
+            Console.WriteLine();
+
+            // Test invalid weight
+            shipment.Weight = -5;
+
+            Console.WriteLine("After invalid weight:");
+            Console.WriteLine("Weight: " + shipment.Weight);
+
+            Console.WriteLine();
+
+            // Test invalid description
+            shipment.Description = "";
+
+            Console.WriteLine("After invalid description:");
+            Console.WriteLine("Description: " + shipment.Description);
         }
     }
 }
