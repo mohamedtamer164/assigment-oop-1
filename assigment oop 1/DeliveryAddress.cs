@@ -3,19 +3,24 @@ namespace assigment_oop_1
 {
     internal struct DeliveryAddress
     {
-        private string  City;
-        private string Street;
-        // Encapsulatoin
-        public string city
+        public string City;
+        public string Street;
+        public int BuildingNumber;
+        // Constructor 
+        public DeliveryAddress(string city,string street ,int buildingnumber)
         {
-            get { return city; }
-            set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                    city = value;
-            }
+            City = city;
+            Street = street;
+            BuildingNumber = buildingnumber;
+
         }
+        // Encapsulatoin
+        public void GetFullAddress()
+        {
+            Console.WriteLine($"{City},{Street},{BuildingNumber}");
+        }
+
+
+
     }
-
-
 }

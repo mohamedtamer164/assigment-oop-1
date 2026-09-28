@@ -34,13 +34,22 @@
 
             // answer 2
 
-            DeliveryAddress address = new DeliveryAddress();
-            address.city = "berket elsabe3"; 
-            // 1  هنا مثلا لو انا مش عاوز حد يغير ال data دي عشان جايه من data base  كدا اي حد يقدر يغيرها 
-            // 2 مفيش Valedatoin  اي مقدرش اعمل كود يحددلي انا عاوز ادخل اي 
-            //بيانات تتقري عادي، لكن مينفعش تتغير إلا بشروط معينة.
+            //DeliveryAddress address = new DeliveryAddress();
+            //address.city = "berket elsabe3";
+            //// 1  هنا مثلا لو انا مش عاوز حد يغير ال data دي عشان جايه من data base  كدا اي حد يقدر يغيرها 
+            //// 2 مفيش Valedatoin  اي مقدرش اعمل كود يحددلي انا عاوز ادخل اي 
+            ////بيانات تتقري عادي، لكن مينفعش تتغير إلا بشروط معينة.
 
-
+            DeliveryAddress address = new DeliveryAddress("Cairo",
+    "Tahrir Street",
+    15);
+            DeliveryAddress address2 = address;
+            address.GetFullAddress();
+            address2.City = "Giza";
+            address2.Street = "elharam";
+            address2.BuildingNumber = 15;
+            address.GetFullAddress();
+            address2.GetFullAddress();
         }
     }
 }
